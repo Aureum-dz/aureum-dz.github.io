@@ -1,0 +1,37 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aureum — الدفع</title>
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { min-height:100vh; background:#0A0A0A; color:#F5F4F2; font-family:Georgia,serif;
+         display:flex; flex-direction:column; align-items:center; justify-content:center; padding:32px 20px; text-align:center; }
+  .icon { font-size:72px; }
+  h1 { color:#D4AF37; font-size:26px; margin-top:18px; }
+  p  { color:#bdb59a; font-size:15px; margin-top:10px; line-height:1.8; max-width:420px; }
+  .fail h1 { color:#e74c3c; }
+</style>
+</head>
+<body>
+  <div id="ok">
+    <div class="icon">✅</div>
+    <h1>تم الدفع بنجاح</h1>
+    <p>ارجع إلى تطبيق Aureum — سيتم تفعيل متجرك تلقائيًا خلال لحظات.<br>
+       Paiement réussi — retournez à l'application, votre boutique s'active automatiquement.</p>
+  </div>
+  <div id="fail" class="fail" style="display:none">
+    <div class="icon">❌</div>
+    <h1>لم يكتمل الدفع</h1>
+    <p>لم يتم خصم أي مبلغ. ارجع إلى التطبيق وحاول مرة أخرى.<br>
+       Le paiement n'a pas abouti — aucun montant prélevé. Réessayez depuis l'application.</p>
+  </div>
+  <script>
+    if (new URLSearchParams(location.search).get('failed')) {
+      document.getElementById('ok').style.display = 'none';
+      document.getElementById('fail').style.display = 'block';
+    }
+  </script>
+</body>
+</html>
