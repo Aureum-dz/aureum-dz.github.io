@@ -3,65 +3,342 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Aureum — تحميل التطبيق</title>
-<meta name="description" content="Aureum — تطبيق محلات الذهب في الجزائر. حمّل التطبيق للأندرويد.">
-<style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body { min-height:100vh; background:#0A0A0A; color:#F5F4F2; font-family:Georgia,'Times New Roman',serif;
-         display:flex; flex-direction:column; align-items:center; justify-content:center; padding:32px 20px; text-align:center; }
-  .badge { width:76px; height:76px; border-radius:22px; background:#D4AF37; display:flex; align-items:center; justify-content:center;
-           box-shadow:0 0 60px rgba(212,175,55,.45); margin-bottom:18px; }
-  h1 { color:#D4AF37; letter-spacing:10px; font-size:34px; font-weight:700; }
-  .tag { color:#bdb59a; letter-spacing:4px; font-size:12px; text-transform:uppercase; margin-top:8px; font-family:Arial,sans-serif; }
-  .card { background:#141419; border:1px solid #26262E; border-radius:20px; padding:28px 24px; margin-top:30px; max-width:420px; width:100%; }
-  .ar { font-size:20px; font-weight:700; }
-  .fr { color:#bdb59a; font-size:14px; margin-top:8px; font-style:italic; }
-  .en { color:#8B8A95; font-size:13px; margin-top:4px; font-family:Arial,sans-serif; }
-  a.btn { display:flex; align-items:center; justify-content:center; gap:12px; background:#D4AF37; color:#0A0A0A;
-          text-decoration:none; font-weight:800; font-size:19px; border-radius:14px; padding:17px 20px; margin-top:22px;
-          font-family:Arial,sans-serif; transition:transform .15s ease, box-shadow .15s ease; box-shadow:0 6px 30px rgba(212,175,55,.35); }
-  a.btn:active { transform:scale(.97); }
-  .meta { display:flex; justify-content:center; gap:14px; margin-top:14px; color:#8B8A95; font-size:12px; font-family:Arial,sans-serif; }
-  .meta span { display:flex; align-items:center; gap:5px; }
-  .note { margin-top:26px; max-width:420px; background:rgba(212,175,55,.08); border:1px solid rgba(212,175,55,.3);
-          border-radius:14px; padding:14px 16px; color:#bdb59a; font-size:13px; line-height:1.7; }
-  .note b { color:#D4AF37; }
-  .android { display:inline-flex; align-items:center; gap:8px; margin-top:26px; color:#0A0A0A; background:#D4AF37;
-             font-size:12px; font-weight:800; letter-spacing:2px; padding:7px 18px; border-radius:999px; font-family:Arial,sans-serif; }
-  footer { margin-top:34px; color:#55545e; font-size:11px; font-family:Arial,sans-serif; letter-spacing:1px; }
-</style>
+<title>Aureum — تطبيق محلات الذهب في الجزائر</title>
+<meta name="description" content="تابع محلات الذهب القريبة منك، شاهد سعر الغرام اليوم وكل قطعة بوزنها وثمنها. وللمحلات: المخزون والمبيعات والأقساط والصندوق في تطبيق واحد. أندرويد، مجاني للزبائن.">
+<meta name="theme-color" content="#0A0A0A">
+<link rel="icon" href="assets/icon.svg" type="image/svg+xml">
+<link rel="canonical" href="https://aureum-dz.com/">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://aureum-dz.com/">
+<meta property="og:title" content="Aureum — تطبيق محلات الذهب في الجزائر">
+<meta property="og:description" content="أسعار الذهب الحقيقية من المحل إلى هاتفك. حمّل التطبيق للأندرويد.">
+<meta property="og:image" content="https://aureum-dz.com/assets/og.png">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Amiri:wght@700&family=Cormorant+Garamond:wght@600;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="assets/site.css">
+<script>
+  // Fill in when the guide videos are online (YouTube, Drive…); the block stays hidden until then.
+  window.SITE_VIDEOS = { customer: '', shop: '' };
+</script>
 </head>
 <body>
-  <div class="badge">
-    <svg width="40" height="40" viewBox="0 0 24 24"><path d="M12 2 L19 8 L12 22 L5 8 Z" fill="#0A0A0A"/></svg>
-  </div>
-  <h1>AUREUM</h1>
-  <div class="tag">Gold &middot; Trust &middot; Craft</div>
 
-  <div class="card">
-    <div class="ar">تطبيق محلات الذهب في الجزائر</div>
-    <div class="fr">L&rsquo;application des bijouteries en Alg&eacute;rie</div>
-    <div class="en">The gold-shop app for Algeria</div>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="stamp" viewBox="0 0 32 32"><path d="M10 2h12l8 8v12l-8 8H10l-8-8V10z" fill="none" stroke="#C9A227" stroke-width="1.6"/><path d="M11 5.5h10l5.5 5.5v10L21 26.5H11L5.5 21V11z" fill="none" stroke="#C9A227" stroke-width=".8" opacity=".6"/><text x="16" y="20" text-anchor="middle" font-family="Georgia,serif" font-size="10" font-weight="700" fill="#E3C25B">AU</text></symbol>
+  <symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 12V4a1 1 0 0 1 1-1h8l9 9-9 9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="8" cy="8" r="1.6" fill="currentColor"/></symbol>
+  <symbol id="i-map" viewBox="0 0 24 24"><path d="M12 21s-7-6.2-7-11.5A7 7 0 0 1 19 9.5C19 14.8 12 21 12 21z" fill="none" stroke="currentColor" stroke-width="1.8"/><circle cx="12" cy="9.5" r="2.5" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-heart" viewBox="0 0 24 24"><path d="M12 20s-8-4.9-8-10.5A4.5 4.5 0 0 1 12 6a4.5 4.5 0 0 1 8 3.5C20 15.1 12 20 12 20z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-near" viewBox="0 0 24 24"><rect x="2.5" y="5" width="7" height="13" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.8"/><rect x="14.5" y="5" width="7" height="13" rx="1.6" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M10.5 9.5h3M10.5 13.5h3" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-vault" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 4.5-3.4 8.3-8 9-4.6-.7-8-4.5-8-9V6z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><path d="M9 12l2 2 4-4" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-star" viewBox="0 0 24 24"><path d="M12 3.5l2.6 5.3 5.9.9-4.3 4.1 1 5.8L12 16.9l-5.2 2.7 1-5.8-4.3-4.1 5.9-.9z" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-box" viewBox="0 0 24 24"><path d="M3.5 7.5L12 3l8.5 4.5v9L12 21l-8.5-4.5z M3.5 7.5L12 12l8.5-4.5 M12 12v9" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/></symbol>
+  <symbol id="i-qr" viewBox="0 0 24 24"><path d="M4 4h6v6H4zM14 4h6v6h-6zM4 14h6v6H4z" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M14 14h2v2h-2zM18 18h2v2h-2zM14 18h2v2h-2zM18 14h2v2h-2z" fill="currentColor"/></symbol>
+  <symbol id="i-wallet" viewBox="0 0 24 24"><path d="M3.5 7.5h15a2 2 0 0 1 2 2v8a2 2 0 0 1-2 2h-13a2 2 0 0 1-2-2zM3.5 7.5l11-3.5v3.5" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linejoin="round"/><circle cx="16.5" cy="13.5" r="1.3" fill="currentColor"/></symbol>
+  <symbol id="i-chart" viewBox="0 0 24 24"><path d="M4 20V10M10 20V4M16 20v-7M21 20H3" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3.2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3 20c.6-3.5 3-5.5 6-5.5s5.4 2 6 5.5M16 5.5a3 3 0 0 1 0 5.6M18 14.8c1.7.7 2.8 2.4 3 5.2" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round"/></symbol>
+  <symbol id="i-export" viewBox="0 0 24 24"><path d="M12 3v12M7 10l5 5 5-5M4 20h16" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" stroke-linejoin="round"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><path d="M8 5l11 7-11 7z" fill="#0A0A0A"/></symbol>
+  <symbol id="i-wa" viewBox="0 0 24 24"><path d="M12 2.5a9.5 9.5 0 0 0-8.2 14.3L2.5 21.5l4.8-1.3A9.5 9.5 0 1 0 12 2.5zm5.3 13.4c-.2.6-1.3 1.2-1.8 1.2-.5.1-1 .2-3.3-.7-2.8-1.1-4.5-3.9-4.7-4.1-.1-.2-1.1-1.5-1.1-2.9s.7-2 1-2.3c.2-.3.5-.3.7-.3h.5c.2 0 .4 0 .6.5l.8 2c.1.2.1.4 0 .5l-.3.5-.4.4c-.1.2-.3.3-.1.6.2.3.8 1.3 1.7 2.1 1.1 1 2.1 1.3 2.4 1.4.3.1.5.1.6-.1l.9-1c.2-.3.4-.2.7-.1l1.9.9c.3.1.5.2.5.3.1.2.1.6-.1 1.1z" fill="currentColor"/></symbol>
+  <symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5.5" width="18" height="13" rx="2" fill="none" stroke="currentColor" stroke-width="1.8"/><path d="M3.5 7l8.5 6 8.5-6" fill="none" stroke="currentColor" stroke-width="1.8"/></symbol>
+  <symbol id="i-down" viewBox="0 0 24 24"><path d="M5 20h14v-2H5zM19 9h-4V3H9v6H5l7 7z" fill="currentColor"/></symbol>
+</svg>
 
-    <a class="btn" href="https://github.com/Aureum-dz/aureum-dz.github.io/releases/latest/download/Aureum.apk">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="#0A0A0A"><path d="M5 20h14v-2H5v2zM19 9h-4V3H9v6H5l7 7 7-7z"/></svg>
-      تحميل التطبيق &nbsp;&middot;&nbsp; T&eacute;l&eacute;charger
-    </a>
-    <div class="meta">
-      <span>≈ 35 MB</span><span>&middot;</span><span>APK</span><span>&middot;</span><span>v1.2.2</span><span>&middot;</span><span>مجاني</span>
+<header class="top">
+  <div class="wrap">
+    <a class="brand" href="#top" aria-label="Aureum"><span class="tile"></span><b>AUREUM</b></a>
+    <nav class="nav">
+      <a href="#who" data-i18n="nav.who">لمن؟</a>
+      <a href="#tour" data-i18n="nav.tour">جولة</a>
+      <a href="#install" data-i18n="nav.install">التثبيت</a>
+      <a href="#faq" data-i18n="nav.faq">أسئلة</a>
+      <a href="#contact" data-i18n="nav.contact">تواصل</a>
+    </nav>
+    <span class="spacer"></span>
+    <div class="langs" role="group" aria-label="Language">
+      <button type="button" data-lang="ar" aria-pressed="true">ع</button>
+      <button type="button" data-lang="fr" aria-pressed="false">FR</button>
+      <button type="button" data-lang="en" aria-pressed="false">EN</button>
     </div>
+    <a class="btn btn-gold btn-sm" href="https://github.com/Aureum-dz/aureum-dz.github.io/releases/latest/download/Aureum.apk" data-i18n="nav.download">تحميل</a>
   </div>
+</header>
 
-  <div class="note">
-    <b>ملاحظة:</b> عند التثبيت قد يطلب هاتفك السماح بـ«التثبيت من مصادر غير معروفة» — اضغط سماح ثم ثبّت.
-    <br>Lors de l&rsquo;installation, autorisez &laquo;&nbsp;sources inconnues&nbsp;&raquo; si votre t&eacute;l&eacute;phone le demande.
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <div>
+        <span class="kicker"><svg class="stamp"><use href="#stamp"/></svg><span data-i18n="hero.kicker">تطبيق محلات الذهب في الجزائر</span></span>
+        <h1 data-i18n="hero.title">أسعار الذهب الحقيقية، <em>من المحل إلى هاتفك</em></h1>
+        <p class="lead" data-i18n="hero.lead">تابع محلات الذهب القريبة منك، شاهد سعر الغرام اليوم وكل قطعة بوزنها وثمنها، واشترِ بثقة. وللمحلات: المخزون والمبيعات والأقساط والصندوق في تطبيق واحد.</p>
+        <div class="cta">
+          <a class="btn btn-gold" href="https://github.com/Aureum-dz/aureum-dz.github.io/releases/latest/download/Aureum.apk">
+            <svg width="22" height="22"><use href="#i-down"/></svg><span data-i18n="hero.download">حمّل التطبيق مجاناً</span>
+          </a>
+          <a class="btn btn-line" href="#install" data-i18n="hero.how">كيف أثبّته؟</a>
+        </div>
+        <div class="facts">
+          <span data-i18n="fact.android">أندرويد 7 فما فوق</span>
+          <span>29 MB</span>
+          <span data-i18n="fact.version">الإصدار 1.4.0</span>
+          <span>عربي · Français · English</span>
+        </div>
+      </div>
+      <div class="phone">
+        <div class="screen">
+          <div class="shot"><img src="assets/screens/customer-home.webp" alt="" loading="eager"><div class="ph"><span class="tile"></span><span data-i18n="shot.soon">صورة التطبيق قريباً</span></div></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="who">
+    <div class="wrap">
+      <span class="kicker"><svg class="stamp"><use href="#stamp"/></svg><span data-i18n="who.kicker">لمن Aureum؟</span></span>
+      <h2 data-i18n="who.title">تطبيق واحد، لطرفين يثق كل منهما بالآخر</h2>
+      <div class="duo">
+        <article class="side">
+          <h3 data-i18n="cust.title">للزبائن</h3>
+          <p class="tagline" data-i18n="cust.tag">مجاني تماماً</p>
+          <ul class="list">
+            <li><span class="ic"><svg><use href="#i-tag"/></svg></span><div><b data-i18n="c1.b">سعر الغرام اليوم</b><span data-i18n="c1.s">كل محل ينشر سعره، وكل قطعة يظهر ثمنها حسب وزنها.</span></div></li>
+            <li><span class="ic"><svg><use href="#i-map"/></svg></span><div><b data-i18n="c2.b">ابحث حسب ميزانيتك</b><span data-i18n="c2.s">قطع من محلات قريبة ضمن ميزانيتك، الأرخص قربك، والمحلات على الخريطة.</span></div></li>
+            <li><span class="ic"><svg><use href="#i-heart"/></svg></span><div><b data-i18n="c3.b">احفظ وتابع</b><span data-i18n="c3.s">تابع محلاتك واحفظ القطع، ويصلك تنبيه عندما ينخفض السعر.</span></div></li>
+            <li><span class="ic"><svg><use href="#i-near"/></svg></span><div><b data-i18n="c4.b">شراء مؤكَّد بهاتفين</b><span data-i18n="c4.s">أكّد الشراء من هاتفك عند البائع، حتى بدون إنترنت.</span></div></li>
+            <li><span class="ic"><svg><use href="#i-vault"/></svg></span><div><b data-i18n="c5.b">خزنتك الخاصة</b><span data-i18n="c5.s">سجّل مجوهراتك بصورها، لا يراها غيرك.</span></div></li>
+            <li><span class="ic"><svg><use href="#i-star"/></svg></span><div><b data-i18n="c6.b">نقاط وأقساط</b><span data-i18n="c6.s">اجمع نقاطاً في محلاتك وخذ تخفيضاً، وتابع أقساطك ودفعاتك.</span></div></li>
+          </ul>
+        </article>
+        <article class="side gold">
+          <h3 data-i18n="shop.title">للمحلات</h3>
+          <p class="tagline" data-i18n="shop.tag">تجربة مجانية، ثم اشتراك شهري</p>
+          <ul class="list">
+            <li><span class="ic"><svg><use href="#i-box"/></svg></span><div><b data-i18n="s1.b">المخزون بالصور والرموز</b><span data-i18n="s1.s">كل قطعة برمزها ووزنها وصورتها، والثمن يُحسب تلقائياً من سعرك.</span></div></li>
+            <li><span class="ic"><svg><use href="#i-qr"/></svg></span><div><b data-i18n="s2.b">بيع مؤكَّد من هاتف الزبون</b><span data-i18n="s2.s">بالرمز أو بجانب الزبون، نقداً أو بالتقسيط.</span></div></li>
+            <li><span class="ic"><svg><use href="#i-wallet"/></svg></span><div><b data-i18n="s3.b">الصندوق والأقساط وشراء الذهب</b><span data-i18n="s3.s">كل دينار داخل وخارج، الديون، والذهب المشترى من الزبائن.</span></div></li>
+            <li><span class="ic"><svg><use href="#i-chart"/></svg></span><div><b data-i18n="s4.b">لوحة محلك</b><span data-i18n="s4.s">من يشاهد قطعك ومن أي مسافة، وما يبحث عنه الناس قربك.</span></div></li>
+            <li><span class="ic"><svg><use href="#i-users"/></svg></span><div><b data-i18n="s5.b">العمال بصلاحيات</b><span data-i18n="s5.s">كل عامل يرى ويفعل ما تسمح له به فقط.</span></div></li>
+            <li><span class="ic"><svg><use href="#i-export"/></svg></span><div><b data-i18n="s6.b">بياناتك لك</b><span data-i18n="s6.s">صدّرها PDF أو Word أو Excel متى شئت. ويعمل حتى بدون إنترنت.</span></div></li>
+          </ul>
+          <p class="note" data-i18n="shop.note"><b>تجربة مجانية</b> لكل محل جديد. للاشتراك والتفعيل راسلنا على واتساب.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="tour">
+    <div class="wrap">
+      <span class="kicker"><svg class="stamp"><use href="#stamp"/></svg><span data-i18n="tour.kicker">جولة في التطبيق</span></span>
+      <h2 data-i18n="tour.title">شاهد قبل أن تحمّل</h2>
+      <div class="tour" tabindex="0" aria-label="Screenshots">
+        <figure><div class="frame"><div class="shot"><img src="assets/screens/customer-home.webp" alt="" loading="lazy"><div class="ph"><span class="tile"></span><span data-i18n="shot.soon2">صورة قريباً</span></div></div></div><figcaption><b data-i18n="t1.b">الرئيسية</b><span data-i18n="t1.s">أسعار محلاتك وما يناسبك</span></figcaption></figure>
+        <figure><div class="frame"><div class="shot"><img src="assets/screens/discover.webp" alt="" loading="lazy"><div class="ph"><span class="tile"></span><span data-i18n="shot.soon3">صورة قريباً</span></div></div></div><figcaption><b data-i18n="t2.b">اكتشف</b><span data-i18n="t2.s">الميزانية، الأرخص قربك، الخريطة</span></figcaption></figure>
+        <figure><div class="frame"><div class="shot"><img src="assets/screens/shop-page.webp" alt="" loading="lazy"><div class="ph"><span class="tile"></span><span data-i18n="shot.soon4">صورة قريباً</span></div></div></div><figcaption><b data-i18n="t3.b">صفحة المحل</b><span data-i18n="t3.s">الأسعار، القطع، الهاتف والموقع</span></figcaption></figure>
+        <figure><div class="frame"><div class="shot"><img src="assets/screens/saved-vault.webp" alt="" loading="lazy"><div class="ph"><span class="tile"></span><span data-i18n="shot.soon5">صورة قريباً</span></div></div></div><figcaption><b data-i18n="t4.b">المحفوظات والخزنة</b><span data-i18n="t4.s">تنبيهات الأسعار ومجوهراتك</span></figcaption></figure>
+        <figure><div class="frame"><div class="shot"><img src="assets/screens/nearby-pay.webp" alt="" loading="lazy"><div class="ph"><span class="tile"></span><span data-i18n="shot.soon6">صورة قريباً</span></div></div></div><figcaption><b data-i18n="t5.b">الشراء بجانب البائع</b><span data-i18n="t5.s">تأكيد من هاتفك، بدون إنترنت</span></figcaption></figure>
+        <figure><div class="frame"><div class="shot"><img src="assets/screens/seller-dashboard.webp" alt="" loading="lazy"><div class="ph"><span class="tile"></span><span data-i18n="shot.soon7">صورة قريباً</span></div></div></div><figcaption><b data-i18n="t6.b">لوحة المحل</b><span data-i18n="t6.s">المبيعات، المشاهدات، الطلب قربك</span></figcaption></figure>
+        <figure><div class="frame"><div class="shot"><img src="assets/screens/seller-sell.webp" alt="" loading="lazy"><div class="ph"><span class="tile"></span><span data-i18n="shot.soon8">صورة قريباً</span></div></div></div><figcaption><b data-i18n="t7.b">البيع</b><span data-i18n="t7.s">بالرمز أو بالهاتف القريب</span></figcaption></figure>
+        <figure><div class="frame"><div class="shot"><img src="assets/screens/widgets.webp" alt="" loading="lazy"><div class="ph"><span class="tile"></span><span data-i18n="shot.soon9">صورة قريباً</span></div></div></div><figcaption><b data-i18n="t8.b">أدوات الشاشة الرئيسية</b><span data-i18n="t8.s">السعر، مبيعات اليوم، بطاقتك</span></figcaption></figure>
+      </div>
+      <div class="videos" data-videos-block hidden>
+        <a class="video" data-video="customer" href="#" target="_blank" rel="noopener" hidden><span class="play"><svg width="20" height="20"><use href="#i-play"/></svg></span><span><b data-i18n="v1.b">دليل الزبون بالفيديو</b><small data-i18n="v1.s">دقائق لتعرف كل شيء</small></span></a>
+        <a class="video" data-video="shop" href="#" target="_blank" rel="noopener" hidden><span class="play"><svg width="20" height="20"><use href="#i-play"/></svg></span><span><b data-i18n="v2.b">دليل المحل بالفيديو</b><small data-i18n="v2.s">من أول قطعة إلى أول بيع</small></span></a>
+      </div>
+    </div>
+  </section>
+
+  <section id="install" class="ivory">
+    <div class="wrap">
+      <span class="kicker"><svg class="stamp"><use href="#stamp"/></svg><span data-i18n="ins.kicker">التثبيت</span></span>
+      <h2 data-i18n="ins.title">ثبّته في دقيقة</h2>
+      <p class="lead" data-i18n="ins.lead">Aureum يُوزَّع مباشرة من موقعه الرسمي، لذلك يطلب أندرويد إذنك مرة واحدة فقط.</p>
+      <ol class="steps">
+        <li><b data-i18n="i1.b">حمّل الملف</b><span data-i18n="i1.s">اضغط «حمّل التطبيق». يُحفظ الملف Aureum.apk في «التنزيلات».</span></li>
+        <li><b data-i18n="i2.b">افتحه</b><span data-i18n="i2.s">من الإشعار أو من «التنزيلات»، اضغط على Aureum.apk.</span></li>
+        <li><b data-i18n="i3.b">اسمح بالتثبيت</b><span data-i18n="i3.s">إن طُلب منك: «الإعدادات» ← «السماح من هذا المصدر»، ثم ارجع.</span></li>
+        <li><b data-i18n="i4.b">ثبّت وافتح</b><span data-i18n="i4.s">اضغط «تثبيت»، اختر لغتك وأنشئ حسابك.</span></li>
+      </ol>
+      <p class="callout" data-i18n="ins.protect"><b>Play Protect:</b> قد تظهر رسالة «تطبيق غير معروف» لأنه ليس من متجر Play. اضغط «مزيد من التفاصيل» ← «التثبيت على أي حال». كل إصدارات Aureum موقّعة بنفس المفتاح، والتحديث يحافظ على بياناتك.</p>
+    </div>
+  </section>
+
+  <section id="faq">
+    <div class="wrap">
+      <span class="kicker"><svg class="stamp"><use href="#stamp"/></svg><span data-i18n="faq.kicker">أسئلة</span></span>
+      <h2 data-i18n="faq.title">أسئلة متكررة</h2>
+      <div class="faq">
+        <details><summary data-i18n="q1">هل التطبيق مجاني؟</summary><p data-i18n="a1">للزبائن نعم، تماماً. المحلات تبدأ بتجربة مجانية ثم اشتراك شهري.</p></details>
+        <details><summary data-i18n="q2">لماذا ليس في متجر Play؟</summary><p data-i18n="a2">نوزّعه مباشرة من موقعنا الرسمي aureum-dz.com. الملف موقّع بمفتاح Aureum، ولن يقبل هاتفك تحديثاً موقّعاً بمفتاح آخر.</p></details>
+        <details><summary data-i18n="q3">هل يعمل على الآيفون؟</summary><p data-i18n="a3">حالياً على أندرويد فقط (الإصدار 7 فما فوق).</p></details>
+        <details><summary data-i18n="q4">هل يبيع Aureum الذهب؟</summary><p data-i18n="a4">لا. المحلات هي التي تبيع وتحدد أسعارها؛ Aureum يربطك بها ويحفظ سجل مشترياتك.</p></details>
+        <details><summary data-i18n="q5">كيف تُحسب الأسعار؟</summary><p data-i18n="a5">كل محل ينشر سعر الغرام لكل نوع وعيار، والتطبيق يضربه في وزن القطعة.</p></details>
+        <details><summary data-i18n="q6">هل يعمل بدون إنترنت؟</summary><p data-i18n="a6">جزئياً: آخر الأسعار والمحلات التي تتابعها تبقى ظاهرة، وما يسجّله المحل دون اتصال يُرسَل تلقائياً عند عودة الإنترنت.</p></details>
+        <details><summary data-i18n="q7">كيف أضيف محلي؟</summary><p data-i18n="a7">حمّل التطبيق، أنشئ حساب «محل» واملأ معلوماته، ثم ابدأ تجربتك المجانية. وإن احتجت مساعدة راسلنا على واتساب.</p></details>
+        <details><summary data-i18n="q8">كيف أحدّث التطبيق؟</summary><p data-i18n="a8">يخبرك التطبيق عند صدور إصدار جديد. حمّله من هنا وثبّته فوق القديم؛ بياناتك تبقى كما هي.</p></details>
+        <details><summary data-i18n="q9">هل بياناتي في أمان؟</summary><p data-i18n="a9">لا نبيع بياناتك ولا نعرض إعلانات. اقرأ <a href="privacy.html">سياسة الخصوصية</a>.</p></details>
+      </div>
+    </div>
+  </section>
+
+  <section id="contact">
+    <div class="wrap">
+      <div class="contact">
+        <div>
+          <span class="kicker"><svg class="stamp"><use href="#stamp"/></svg><span data-i18n="ct.kicker">تواصل معنا</span></span>
+          <h2 data-i18n="ct.title">سؤال؟ محل يريد الانضمام؟</h2>
+          <p class="lead" data-i18n="ct.lead">راسلنا على واتساب أو بالبريد، ونرد في أقرب وقت.</p>
+          <div class="row">
+            <a class="btn btn-wa" href="https://wa.me/213558445754" target="_blank" rel="noopener"><svg width="22" height="22"><use href="#i-wa"/></svg><span dir="ltr">+213 558 44 57 54</span></a>
+            <a class="btn btn-line" href="mailto:contact@aureum-dz.com"><svg width="20" height="20"><use href="#i-mail"/></svg><span dir="ltr">contact@aureum-dz.com</span></a>
+          </div>
+        </div>
+        <div class="qr"><img src="assets/qr.svg" alt="QR aureum-dz.com"><span data-i18n="ct.qr">امسح للتحميل من هاتفك</span></div>
+      </div>
+    </div>
+  </section>
+</main>
+
+<div class="lightbox" id="lightbox" role="dialog" aria-modal="true" aria-label="Aureum" hidden>
+  <button type="button" class="lb-btn lb-close" aria-label="Close">&times;</button>
+  <button type="button" class="lb-btn lb-prev" aria-label="Previous">&#8249;</button>
+  <img alt="">
+  <p class="lb-cap"></p>
+  <button type="button" class="lb-btn lb-next" aria-label="Next">&#8250;</button>
+</div>
+
+<footer>
+  <div class="wrap">
+    <span>© 2026 Aureum</span>
+    <a href="privacy.html" data-i18n="ft.privacy">سياسة الخصوصية</a>
+    <a href="https://github.com/Aureum-dz/aureum-dz.github.io/releases/latest/download/Aureum.apk" data-i18n="ft.download">تحميل التطبيق</a>
+    <a href="https://wa.me/213558445754" target="_blank" rel="noopener" data-i18n="ft.wa">واتساب</a>
   </div>
+</footer>
 
-  <div class="android">
-    <svg width="14" height="14" viewBox="0 0 24 24" fill="#0A0A0A"><path d="M17.6 9.48l1.84-3.18c.16-.31.04-.69-.26-.85-.29-.15-.65-.06-.83.22l-1.88 3.24c-1.36-.61-2.9-.96-4.47-.96s-3.11.35-4.47.96L5.65 5.67c-.18-.28-.54-.37-.83-.22-.3.16-.42.54-.26.85L6.4 9.48C3.3 11.25 1.28 14.44 1 18h22c-.28-3.56-2.3-6.75-5.4-8.52zM7 15.25c-.69 0-1.25-.56-1.25-1.25S6.31 12.75 7 12.75s1.25.56 1.25 1.25S7.69 15.25 7 15.25zm10 0c-.69 0-1.25-.56-1.25-1.25s.56-1.25 1.25-1.25 1.25.56 1.25 1.25-.56 1.25-1.25 1.25z"/></svg>
-    ANDROID ONLY
-  </div>
-
-  <footer>AUREUM &copy; 2026</footer>
+<script>
+window.I18N = {
+  meta: {
+    ar: { title: 'Aureum — تطبيق محلات الذهب في الجزائر', description: 'تابع محلات الذهب القريبة منك، شاهد سعر الغرام اليوم وكل قطعة بوزنها وثمنها. وللمحلات: المخزون والمبيعات والأقساط والصندوق في تطبيق واحد. أندرويد، مجاني للزبائن.' },
+    fr: { title: 'Aureum — l’application des bijouteries en Algérie', description: 'Suivez les bijouteries près de chez vous, voyez le prix du gramme du jour et chaque pièce avec son poids et son prix. Pour les bijoutiers : stock, ventes, crédits et caisse dans une seule app. Android, gratuit pour les clients.' },
+    en: { title: 'Aureum — the gold-shop app for Algeria', description: 'Follow the gold shops near you, see today’s price per gram and every piece with its weight and price. For shops: stock, sales, instalments and cash in one app. Android, free for customers.' }
+  },
+  fr: {
+    'nav.who': 'Pour qui ?', 'nav.tour': 'Visite', 'nav.install': 'Installer', 'nav.faq': 'Questions', 'nav.contact': 'Contact', 'nav.download': 'Télécharger',
+    'hero.kicker': 'L’application des bijouteries en Algérie',
+    'hero.title': 'Le vrai prix de l’or, <em>de la bijouterie à votre téléphone</em>',
+    'hero.lead': 'Suivez les bijouteries près de chez vous, voyez le prix du gramme du jour et chaque pièce avec son poids et son prix, et achetez en confiance. Pour les bijoutiers : stock, ventes, crédits et caisse dans une seule application.',
+    'hero.download': 'Télécharger gratuitement', 'hero.how': 'Comment l’installer ?',
+    'fact.android': 'Android 7 et plus', 'fact.version': 'Version 1.4.0', 'shot.soon': 'Capture bientôt',
+    'who.kicker': 'Pour qui ?', 'who.title': 'Une application, deux côtés qui se font confiance',
+    'cust.title': 'Pour les clients', 'cust.tag': 'Entièrement gratuit',
+    'c1.b': 'Le prix du gramme du jour', 'c1.s': 'Chaque bijouterie publie son prix ; chaque pièce affiche le sien selon son poids.',
+    'c2.b': 'Cherchez selon votre budget', 'c2.s': 'Des pièces des bijouteries proches dans votre budget, la moins chère près de vous, et la carte.',
+    'c3.b': 'Enregistrez et suivez', 'c3.s': 'Suivez vos bijouteries, enregistrez des pièces et soyez prévenu quand le prix baisse.',
+    'c4.b': 'Achat confirmé à deux téléphones', 'c4.s': 'Confirmez l’achat depuis votre téléphone chez le bijoutier, même sans internet.',
+    'c5.b': 'Votre coffre privé', 'c5.s': 'Enregistrez vos bijoux avec leurs photos ; personne d’autre ne les voit.',
+    'c6.b': 'Points et crédits', 'c6.s': 'Cumulez des points dans vos bijouteries pour une remise, et suivez vos crédits.',
+    'shop.title': 'Pour les bijoutiers', 'shop.tag': 'Essai gratuit, puis abonnement mensuel',
+    's1.b': 'Le stock en photos et codes', 's1.s': 'Chaque pièce avec son code, son poids et sa photo ; le prix se calcule depuis votre tarif.',
+    's2.b': 'Vente confirmée par le client', 's2.s': 'Par code ou à côté du client, comptant ou à crédit.',
+    's3.b': 'Caisse, crédits et rachat d’or', 's3.s': 'Chaque dinar qui entre et sort, les dettes, et l’or racheté aux clients.',
+    's4.b': 'Le tableau de votre bijouterie', 's4.s': 'Qui regarde vos pièces et de quelle distance, et ce qu’on cherche près de vous.',
+    's5.b': 'Employés avec permissions', 's5.s': 'Chaque employé voit et fait seulement ce que vous autorisez.',
+    's6.b': 'Vos données vous appartiennent', 's6.s': 'Exportez en PDF, Word ou Excel quand vous voulez. Fonctionne aussi sans internet.',
+    'shop.note': '<b>Essai gratuit</b> pour chaque nouvelle bijouterie. Pour l’abonnement et l’activation, écrivez-nous sur WhatsApp.',
+    'tour.kicker': 'Visite de l’application', 'tour.title': 'Voyez avant de télécharger',
+    'shot.soon2': 'Capture bientôt', 'shot.soon3': 'Capture bientôt', 'shot.soon4': 'Capture bientôt', 'shot.soon5': 'Capture bientôt',
+    'shot.soon6': 'Capture bientôt', 'shot.soon7': 'Capture bientôt', 'shot.soon8': 'Capture bientôt', 'shot.soon9': 'Capture bientôt',
+    't1.b': 'Accueil', 't1.s': 'Les prix de vos bijouteries et nos suggestions',
+    't2.b': 'Découvrir', 't2.s': 'Budget, le moins cher près de vous, la carte',
+    't3.b': 'Page de la bijouterie', 't3.s': 'Prix, pièces, téléphone et adresse',
+    't4.b': 'Favoris et coffre', 't4.s': 'Alertes de prix et vos bijoux',
+    't5.b': 'Achat à côté du vendeur', 't5.s': 'Confirmation depuis votre téléphone, sans internet',
+    't6.b': 'Tableau de bord', 't6.s': 'Ventes, vues, demande près de vous',
+    't7.b': 'Vente', 't7.s': 'Par code ou par téléphone à proximité',
+    't8.b': 'Widgets d’écran d’accueil', 't8.s': 'Le prix, les ventes du jour, votre carte',
+    'v1.b': 'Le guide client en vidéo', 'v1.s': 'Quelques minutes pour tout savoir',
+    'v2.b': 'Le guide bijoutier en vidéo', 'v2.s': 'De la première pièce à la première vente',
+    'ins.kicker': 'Installation', 'ins.title': 'Installé en une minute',
+    'ins.lead': 'Aureum est distribué directement depuis son site officiel : Android vous demande votre accord une seule fois.',
+    'i1.b': 'Téléchargez', 'i1.s': 'Appuyez sur « Télécharger ». Le fichier Aureum.apk va dans « Téléchargements ».',
+    'i2.b': 'Ouvrez-le', 'i2.s': 'Depuis la notification ou « Téléchargements », appuyez sur Aureum.apk.',
+    'i3.b': 'Autorisez', 'i3.s': 'Si on vous le demande : « Paramètres » → « Autoriser cette source », puis revenez.',
+    'i4.b': 'Installez et ouvrez', 'i4.s': 'Appuyez sur « Installer », choisissez votre langue et créez votre compte.',
+    'ins.protect': '<b>Play Protect :</b> un message « application inconnue » peut apparaître, car elle ne vient pas du Play Store. Appuyez sur « Plus de détails » → « Installer quand même ». Toutes les versions d’Aureum sont signées avec la même clé, et une mise à jour garde vos données.',
+    'faq.kicker': 'Questions', 'faq.title': 'Questions fréquentes',
+    'q1': 'L’application est-elle gratuite ?', 'a1': 'Pour les clients, oui, entièrement. Les bijouteries commencent par un essai gratuit, puis un abonnement mensuel.',
+    'q2': 'Pourquoi pas sur le Play Store ?', 'a2': 'Nous la distribuons directement depuis notre site officiel aureum-dz.com. Le fichier est signé avec la clé d’Aureum : votre téléphone refusera toute mise à jour signée par une autre clé.',
+    'q3': 'Fonctionne-t-elle sur iPhone ?', 'a3': 'Pour l’instant, Android uniquement (version 7 et plus).',
+    'q4': 'Aureum vend-il de l’or ?', 'a4': 'Non. Ce sont les bijouteries qui vendent et fixent leurs prix ; Aureum vous relie à elles et garde l’historique de vos achats.',
+    'q5': 'Comment les prix sont-ils calculés ?', 'a5': 'Chaque bijouterie publie son prix au gramme par type d’or et carat ; l’application le multiplie par le poids de la pièce.',
+    'q6': 'Fonctionne-t-elle sans internet ?', 'a6': 'En partie : les derniers prix et vos bijouteries suivies restent visibles, et ce que la bijouterie enregistre hors ligne part tout seul au retour d’internet.',
+    'q7': 'Comment ajouter ma bijouterie ?', 'a7': 'Téléchargez l’application, créez un compte « bijouterie », remplissez ses informations et lancez votre essai gratuit. Besoin d’aide ? Écrivez-nous sur WhatsApp.',
+    'q8': 'Comment mettre à jour ?', 'a8': 'L’application vous prévient quand une nouvelle version sort. Téléchargez-la ici et installez-la par-dessus l’ancienne : vos données restent.',
+    'q9': 'Mes données sont-elles en sécurité ?', 'a9': 'Nous ne vendons pas vos données et n’affichons aucune publicité. Lisez la <a href="privacy.html">politique de confidentialité</a>.',
+    'ct.kicker': 'Contact', 'ct.title': 'Une question ? Une bijouterie qui veut nous rejoindre ?',
+    'ct.lead': 'Écrivez-nous sur WhatsApp ou par e-mail, nous répondons au plus vite.', 'ct.qr': 'Scannez pour télécharger sur votre téléphone',
+    'ft.privacy': 'Confidentialité', 'ft.download': 'Télécharger', 'ft.wa': 'WhatsApp'
+  },
+  en: {
+    'nav.who': 'Who is it for', 'nav.tour': 'Tour', 'nav.install': 'Install', 'nav.faq': 'FAQ', 'nav.contact': 'Contact', 'nav.download': 'Download',
+    'hero.kicker': 'The gold-shop app for Algeria',
+    'hero.title': 'Real gold prices, <em>from the shop to your phone</em>',
+    'hero.lead': 'Follow the gold shops near you, see today’s price per gram and every piece with its weight and price, and buy with confidence. For shops: stock, sales, instalments and cash in a single app.',
+    'hero.download': 'Download for free', 'hero.how': 'How do I install it?',
+    'fact.android': 'Android 7 and up', 'fact.version': 'Version 1.4.0', 'shot.soon': 'Screenshot coming soon',
+    'who.kicker': 'Who is it for', 'who.title': 'One app, two sides that trust each other',
+    'cust.title': 'For customers', 'cust.tag': 'Completely free',
+    'c1.b': 'Today’s price per gram', 'c1.s': 'Every shop publishes its price; every piece shows its own, by weight.',
+    'c2.b': 'Search by budget', 'c2.s': 'Pieces from nearby shops within your budget, the cheapest near you, and the map.',
+    'c3.b': 'Save and follow', 'c3.s': 'Follow your shops, save pieces, and get told when a price drops.',
+    'c4.b': 'Two-phone confirmed purchase', 'c4.s': 'Confirm the purchase from your phone at the counter, even without internet.',
+    'c5.b': 'Your private vault', 'c5.s': 'Keep a record of your jewellery with photos; nobody else sees it.',
+    'c6.b': 'Points and instalments', 'c6.s': 'Earn points at your shops for a discount, and follow your instalments.',
+    'shop.title': 'For shops', 'shop.tag': 'Free trial, then a monthly subscription',
+    's1.b': 'Stock with photos and codes', 's1.s': 'Every piece with its code, weight and photo; the price follows your rate.',
+    's2.b': 'Sales confirmed by the customer', 's2.s': 'By code or next to the customer, cash or in instalments.',
+    's3.b': 'Cash, instalments and buy-back', 's3.s': 'Every dinar in and out, the debts, and the gold you buy from customers.',
+    's4.b': 'Your shop dashboard', 's4.s': 'Who views your pieces and from how far, and what people search for near you.',
+    's5.b': 'Workers with permissions', 's5.s': 'Each worker sees and does only what you allow.',
+    's6.b': 'Your data is yours', 's6.s': 'Export to PDF, Word or Excel any time. Works without internet too.',
+    'shop.note': '<b>Free trial</b> for every new shop. For the subscription and activation, message us on WhatsApp.',
+    'tour.kicker': 'App tour', 'tour.title': 'See it before you download',
+    'shot.soon2': 'Screenshot soon', 'shot.soon3': 'Screenshot soon', 'shot.soon4': 'Screenshot soon', 'shot.soon5': 'Screenshot soon',
+    'shot.soon6': 'Screenshot soon', 'shot.soon7': 'Screenshot soon', 'shot.soon8': 'Screenshot soon', 'shot.soon9': 'Screenshot soon',
+    't1.b': 'Home', 't1.s': 'Your shops’ prices and picks for you',
+    't2.b': 'Discover', 't2.s': 'Budget, cheapest near you, the map',
+    't3.b': 'Shop page', 't3.s': 'Prices, pieces, phone and location',
+    't4.b': 'Saved and vault', 't4.s': 'Price alerts and your jewellery',
+    't5.b': 'Buying at the counter', 't5.s': 'Confirm from your phone, no internet needed',
+    't6.b': 'Shop dashboard', 't6.s': 'Sales, views, demand near you',
+    't7.b': 'Selling', 't7.s': 'By code or by the nearby phone',
+    't8.b': 'Home-screen widgets', 't8.s': 'The price, today’s sales, your card',
+    'v1.b': 'Customer guide video', 'v1.s': 'A few minutes to know it all',
+    'v2.b': 'Shop guide video', 'v2.s': 'From the first piece to the first sale',
+    'ins.kicker': 'Install', 'ins.title': 'Installed in a minute',
+    'ins.lead': 'Aureum is distributed straight from its official website, so Android asks for your permission once.',
+    'i1.b': 'Download', 'i1.s': 'Tap “Download”. The file Aureum.apk goes to “Downloads”.',
+    'i2.b': 'Open it', 'i2.s': 'From the notification or “Downloads”, tap Aureum.apk.',
+    'i3.b': 'Allow it', 'i3.s': 'If asked: “Settings” → “Allow from this source”, then go back.',
+    'i4.b': 'Install and open', 'i4.s': 'Tap “Install”, pick your language and create your account.',
+    'ins.protect': '<b>Play Protect:</b> an “unknown app” message may appear because it isn’t from the Play Store. Tap “More details” → “Install anyway”. Every Aureum version is signed with the same key, and updating keeps your data.',
+    'faq.kicker': 'Questions', 'faq.title': 'Frequently asked questions',
+    'q1': 'Is the app free?', 'a1': 'For customers, yes, completely. Shops start with a free trial, then a monthly subscription.',
+    'q2': 'Why isn’t it on the Play Store?', 'a2': 'We distribute it straight from our official website, aureum-dz.com. The file is signed with Aureum’s key, and your phone will refuse any update signed with another key.',
+    'q3': 'Does it work on iPhone?', 'a3': 'For now, Android only (version 7 and up).',
+    'q4': 'Does Aureum sell gold?', 'a4': 'No. The shops sell and set their prices; Aureum connects you to them and keeps a record of your purchases.',
+    'q5': 'How are prices calculated?', 'a5': 'Each shop publishes its price per gram for each gold type and karat; the app multiplies it by the piece’s weight.',
+    'q6': 'Does it work offline?', 'a6': 'Partly: the latest prices and the shops you follow stay visible, and what a shop records offline is sent by itself when the internet is back.',
+    'q7': 'How do I add my shop?', 'a7': 'Download the app, create a “shop” account, fill in its details and start your free trial. Need help? Message us on WhatsApp.',
+    'q8': 'How do I update?', 'a8': 'The app tells you when a new version is out. Download it here and install it over the old one: your data stays.',
+    'q9': 'Is my data safe?', 'a9': 'We don’t sell your data and show no ads. Read the <a href="privacy.html">privacy policy</a>.',
+    'ct.kicker': 'Contact', 'ct.title': 'A question? A shop that wants to join?',
+    'ct.lead': 'Message us on WhatsApp or by email; we reply as soon as we can.', 'ct.qr': 'Scan to download on your phone',
+    'ft.privacy': 'Privacy', 'ft.download': 'Download', 'ft.wa': 'WhatsApp'
+  }
+};
+</script>
+<script src="assets/site.js" defer></script>
 </body>
 </html>
