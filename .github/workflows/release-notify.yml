@@ -1,0 +1,100 @@
+# When a release is published here, tell the app: the build and version are read
+# from the release's Aureum.apk itself, then sent to Supabase (publish_release).
+# Every account still on an older build then gets a notification in its language,
+# and the "Update available" pop-up shows when they open the app.
+#
+# Pre-releases (test builds) tell nobody. Running it again for the same release
+# changes nothing. To re-send by hand: Actions → "Tell app users about a release"
+# → Run workflow → type the tag (e.g. v1.4.1).
+#
+# Repo secrets: AUREUM_RELEASE_KEY (its SHA-256 is in the app's migration 068)
+# and SUPABASE_ANON_KEY (the app's public anon key).
+name: Tell app users about a release
+
+on:
+  release:
+    types: [released]
+  workflow_dispatch:
+    inputs:
+      tag:
+        description: Release tag to announce (e.g. v1.4.1)
+        required: true
+
+permissions:
+  contents: read
+
+jobs:
+  notify:
+    runs-on: ubuntu-latest
+    timeout-minutes: 10
+    env:
+      TAG: ${{ github.event.release.tag_name || inputs.tag }}
+      GH_TOKEN: ${{ github.token }}
+    steps:
+      - name: Download the release
+        run: |
+          # The APK can still be uploading when the release is published: wait for it.
+          for i in 1 2 3 4 5 6; do
+            gh release download "$TAG" -R "$GITHUB_REPOSITORY" -p Aureum.apk -D apk --clobber && break
+            [ "$i" = 6 ] && { echo "Aureum.apk is not on release $TAG"; exit 1; }
+            sleep 20
+          done
+          gh release view "$TAG" -R "$GITHUB_REPOSITORY" --json body,isPrerelease > release.json
+
+      - name: Read build and version from the APK
+        run: |
+          TOOLS="$ANDROID_HOME/build-tools/$(ls "$ANDROID_HOME/build-tools" | sort -V | tail -1)"
+          "$TOOLS/aapt2" dump badging apk/Aureum.apk > badging.txt
+          grep -m1 '^package:' badging.txt
+
+      - name: Tell the app
+        env:
+          AUREUM_RELEASE_KEY: ${{ secrets.AUREUM_RELEASE_KEY }}
+          SUPABASE_ANON_KEY: ${{ secrets.SUPABASE_ANON_KEY }}
+        run: |
+          python3 - <<'PY'
+          import json, os, re, sys, urllib.error, urllib.request
+
+          URL = "https://zazqmghaqxgexonywnaj.supabase.co/rest/v1/rpc/publish_release"
+
+          release = json.load(open("release.json", encoding="utf-8"))
+          if release.get("isPrerelease"):
+              print("Pre-release (test build): nobody is told.")
+              sys.exit(0)
+
+          badging = open("badging.txt", encoding="utf-8").read()
+          code = re.search(r"versionCode='(\d+)'", badging)
+          name = re.search(r"versionName='([^']+)'", badging)
+          if not code or not name:
+              sys.exit("Could not read the build/version from Aureum.apk")
+
+          # The release text, as plain text for the pop-up ("## title" dropped,
+          # **bold** and "- " list marks simplified).
+          lines = []
+          for i, line in enumerate((release.get("body") or "").strip().splitlines()):
+              s = line.strip()
+              if s.startswith("#"):
+                  if i == 0:
+                      continue          # the release title ("## Aureum 1.4.1")
+                  s = s.lstrip("#").strip()   # keep "## English" as a language header
+              s = s.replace("**", "")
+              if s[:2] in ("- ", "* "):
+                  s = "• " + s[2:]
+              lines.append(s)
+          notes = re.sub(r"\n{3,}", "\n\n", "\n".join(lines)).strip()
+
+          key = os.environ.get("AUREUM_RELEASE_KEY")
+          anon = os.environ.get("SUPABASE_ANON_KEY")
+          if not key or not anon:
+              sys.exit("Missing repo secret AUREUM_RELEASE_KEY or SUPABASE_ANON_KEY")
+
+          payload = json.dumps({"p_key": key, "p_build": int(code.group(1)),
+                                "p_version": name.group(1), "p_notes": notes}).encode()
+          req = urllib.request.Request(URL, data=payload, method="POST", headers={
+              "apikey": anon, "Authorization": "Bearer " + anon, "Content-Type": "application/json"})
+          try:
+              with urllib.request.urlopen(req, timeout=30) as resp:
+                  print(f"Build {code.group(1)} / {name.group(1)}:", resp.read().decode())
+          except urllib.error.HTTPError as e:
+              sys.exit(f"Supabase said {e.code}: {e.read().decode()}")
+          PY
