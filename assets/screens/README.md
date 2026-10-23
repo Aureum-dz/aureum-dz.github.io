@@ -5,6 +5,8 @@ site shows a gold frame in its place — nothing breaks.
 
 | File | Shown as | What to capture (phone, portrait) |
 |---|---|---|
+| `sign-in.webp` | Tour "Sign in" (first card) | Sign-in screen |
+| `choose-role.webp` | Tour "Customer or shop" | Sign-up step 1: choose your role |
 | `customer-home.webp` | Hero phone + tour "Home" | Customer home: overview, shop prices, For you |
 | `discover.webp` | Tour "Discover" | Discover → budget search results (or the map tab) |
 | `shop-page.webp` | Tour "Shop page" | A shop page with prices and pieces |
