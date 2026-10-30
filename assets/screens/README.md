@@ -15,6 +15,10 @@ site shows a gold frame in its place — nothing breaks.
 | `seller-dashboard.webp` | Tour "Shop dashboard" | Dashboard → Overview |
 | `seller-sell.webp` | Tour "Selling" | Sell screen with a piece chosen |
 | `widgets.webp` | Tour "Home-screen widgets" | Phone home screen with 2–3 Aureum widgets |
+| `member-card.webp` | Tour "Member card" | Customer home → QR button (member card sheet) |
+| `flip-cards.webp` | Tour "Pieces" | Shop page pieces with one card flipped |
+| `sale-details.webp` | Tour "Sale details" | Dashboard → Reports → a sale on installments, scrolled to the payments |
+| `shop-qr-print.webp` | Tour "Shop QR" | Seller home → Shop QR sheet (Poster selected) |
 
 Tips:
 - Take them in Arabic, on a shop with real-looking (but not private) data.

@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="ar" dir="rtl">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Aureum — محل ذهب</title>
+<meta name="description" content="هذا المحل على Aureum: أسعار الذهب اليوم وكل قطعة بوزنها وثمنها. افتحه في التطبيق أو حمّل Aureum للأندرويد.">
+<meta name="theme-color" content="#0A0A0A">
+<meta name="robots" content="noindex">
+<link rel="icon" href="../assets/icon.svg" type="image/svg+xml">
+<meta property="og:title" content="Aureum — محل ذهب">
+<meta property="og:image" content="https://aureum-dz.com/assets/og.png">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body { min-height:100vh; background:#0A0A0A; color:#F5F4F2; font-family:Tahoma,Arial,sans-serif;
+         display:flex; flex-direction:column; align-items:center; justify-content:center; padding:32px 20px; text-align:center; }
+  .logo { width:84px; height:84px; }
+  h1 { color:#D4AF37; font-size:26px; margin-top:18px; line-height:1.4; }
+  p { color:#bdb59a; font-size:15px; margin-top:10px; line-height:1.8; max-width:440px; }
+  .fr { direction:ltr; font-size:13px; color:#8f8975; }
+  .btns { display:flex; flex-direction:column; gap:12px; margin-top:28px; width:100%; max-width:340px; }
+  .btn { display:block; padding:15px 18px; border-radius:14px; font-weight:700; font-size:16px; text-decoration:none; }
+  .gold { background:#D4AF37; color:#0A0A0A; }
+  .line { border:1.5px solid #D4AF37; color:#D4AF37; }
+  .small { margin-top:22px; font-size:13px; }
+  .small a { color:#D4AF37; }
+</style>
+</head>
+<body>
+  <img class="logo" src="../assets/icon.svg" alt="Aureum">
+  <h1>هذا المحل على Aureum</h1>
+  <p>شاهد أسعار الذهب اليوم وكل قطعة بوزنها وثمنها، وتابع المحل لتصلك عروضه.</p>
+  <p class="fr">Cette bijouterie est sur Aureum : prix de l'or du jour et chaque bijou avec son poids et son prix.<br>
+     This shop is on Aureum: today's gold prices and every piece with its weight and price.</p>
+
+  <div class="btns">
+    <a class="btn gold" id="download" href="https://github.com/Aureum-dz/aureum-dz.github.io/releases/latest/download/Aureum.apk">
+      حمّل التطبيق مجاناً · Télécharger</a>
+    <a class="btn line" id="open" href="#">لديّ التطبيق: افتح المحل · Ouvrir dans Aureum</a>
+  </div>
+  <p class="small"><a href="../#install">كيف أثبّت التطبيق؟ · Comment l'installer ?</a></p>
+
+  <script>
+    // Phones with Aureum normally never see this page (the app opens the link
+    // itself). The button covers older app versions: open the shop in the app,
+    // or fall back to the download.
+    (function () {
+      var id = new URLSearchParams(location.search).get('s') || '';
+      var open = document.getElementById('open');
+      if (!/^[A-Za-z0-9-]{1,64}$/.test(id)) { open.style.display = 'none'; return; }
+      var download = document.getElementById('download').href;
+      open.href = 'intent://shops?storeId=' + encodeURIComponent(id) +
+        '#Intent;scheme=aureum;package=com.aureum.marketplace;S.browser_fallback_url=' +
+        encodeURIComponent(download) + ';end';
+    })();
+  </script>
+</body>
+</html>

@@ -1,0 +1,12 @@
+[
+  {
+    "relation": ["delegate_permission/common.handle_all_urls"],
+    "target": {
+      "namespace": "android_app",
+      "package_name": "com.aureum.marketplace",
+      "sha256_cert_fingerprints": [
+        "A1:FF:85:01:56:B3:0E:54:FB:B4:C6:28:28:5C:14:61:88:C2:B9:6D:DB:FF:29:5B:8F:ED:98:6B:09:57:E0:EB"
+      ]
+    }
+  }
+]
